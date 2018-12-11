@@ -10,7 +10,6 @@ import com.vanrepin.assignment.controller.impl.input.BaseCurrencyInputTextWatche
 import com.vanrepin.assignment.model.CurrencyCode
 import com.vanrepin.assignment.model.RatesData
 import com.vanrepin.assignment.model.impl.CurrencyRegistryImpl
-import com.vanrepin.assignment.model.impl.CurrencyResourcesHelperImpl
 import com.vanrepin.assignment.network.RatesFetcher
 import com.vanrepin.assignment.view.InputHelperImpl
 import com.vanrepin.assignment.view.currency.CurrencyView
@@ -22,7 +21,6 @@ fun buildBaseCurrencyController(
     baseCurrencyView: CurrencyView,
     context: Context
 ): CurrencyController {
-    CurrencyController.currencyResourcesHelper = CurrencyResourcesHelperImpl(R.string::class, R.drawable::class)
     return BaseCurrencyController(
         baseCurrencyView,
         currencyRegistry,

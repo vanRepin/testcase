@@ -26,8 +26,8 @@ class RatesFetcher(
 
     fun getCurrencies(onLoaded: (Set<CurrencyCode>) -> Unit) = launch(coroutineContext) {
         val result = fetchRates().rates
-        ratesUpdater.update(result)
         launch(Dispatchers.Main) {
+            ratesUpdater.update(result)
             onLoaded(result.keys)
         }
     }
